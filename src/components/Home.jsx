@@ -13,14 +13,12 @@ function Home() {
   return (
     <AnimatePresence>
       <motion.section
-        className="top-0 bottom-0 md:h-full flex justify-start items-start flex-col md:py-8 md:px-20 sm:p-8 p-6 max-md:gap-7 absolute z-10"
+        className=" top-1/3 bottom-1/2 flex justify-center items-start flex-col md:py-8 md:px-20 sm:p-8 p-6 max-md:gap-7 absolute z-10"
         {...slideAnimation("left")}
       >
-        <motion.header {...slideAnimation("down")}>
-          <img src="./logo.svg" alt="logo" className="object-contain h-16" />
-        </motion.header>
+        
         <motion.div
-          className=" h-full-20rem sm:h-full flex flex-col justify-center gap-6"
+          className="flex flex-col justify-center gap-6"
           {...headContainerAnimation}
         >
           <motion.div {...headTextAnimation}>

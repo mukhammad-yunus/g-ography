@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { IoMdSearch } from "react-icons/io";
 import { configArr } from "../config/utils";
-import SearchOptionsBtn from "./subcomponents/searchOptionsBtn";
+import SearchOptionsBtn from "./helpers/searchOptionsBtn";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchSearch,

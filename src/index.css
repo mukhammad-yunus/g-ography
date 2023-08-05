@@ -2,21 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
-  margin: 0;
+@layer base {
+  html {
+    font-family: "Fira Sans", sans-serif;
+    font-family: "Montserrat", sans-serif;
+  }
 }
-#root {
-  width: 100vw;
-  height: 100vh;
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+.bg-gradient-black {
+  background: rgb(59, 59, 59);
+  background: linear-gradient(
+    0deg,
+    rgba(59, 59, 59, 1) 0%,
+    rgba(4, 4, 6, 1) 77%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+.bg-gradient-white {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(126, 126, 126, 1) 53%,
+    rgba(59, 59, 59, 1) 100%
+  );
 }
 .max-w-input {
   max-width: calc(100vw-100px);
 }
 .h-full-20rem {
-  height: calc(100% - 20rem);
-}
-.app {
-  @apply relative w-full bg-black h-screen;
+  height: calc(100vh - 20rem);
 }
 .glassmorphism {
   background: rgba(0, 0, 0, 0.1);

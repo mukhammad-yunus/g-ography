@@ -14,7 +14,7 @@ function Card({ country, home }) {
     : "flex flex-col justify-between items-start";
 
   return (
-    <Link to={"#"} className={parentClass}>
+    <Link to={`/country/${country?.cca3.toLowerCase()}`} className={parentClass}>
       <div>
         <img
           className="m-0 py-2 rounded w-full object-contain max-h-36"

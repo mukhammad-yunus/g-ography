@@ -9,7 +9,8 @@ export default {
       backgroundColor: {
         activeBtn: '#2b5278',
         normalBtn: "#4586c4"
-      }
+      },
+      
     },
     screens: {
       xs: '400px',

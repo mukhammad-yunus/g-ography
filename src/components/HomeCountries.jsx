@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
-import Card from "./subcomponents/Card";
+import Card from "./helpers/Card";
 import { useDispatch, useSelector } from "react-redux";
 import { getNeighbors, selectMyCountry, selectNeighbors } from "../config/countrySlice";
+import Loader from "./Loader";
 
 function HomeCountries() {
   const dispatch = useDispatch();
@@ -15,11 +16,11 @@ function HomeCountries() {
     }
   }, [myCountry]);
 
-  if (!myCountry) return <div className="text-white">Loading...</div>;
+  if (!myCountry) return <Loader/>
   return (
     <>
       {myCountry && (
-        <div className="bg-white md:py-8 md:px-20 sm:p-8 p-6 flex flex-col gap-2">
+        <div className="bg-black md:py-8 md:px-20 sm:p-8 p-6 mt-20 flex flex-col gap-2 text-white">
           <div className="flex flex-col justify-between items-start">
             <h1 className="text-3xl font-bold mb-5">Your country</h1>
             <Card country={myCountry[0]} home={true} />
