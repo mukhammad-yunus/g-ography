@@ -12,21 +12,26 @@ import About from "./pages/About";
 
 function App() {
   const location = useLocation();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   useEffect(() => {
-    const allCountries = JSON.parse(localStorage.getItem('allCountries'))
+    const allCountries = JSON.parse(localStorage.getItem("allCountries"));
     if (!allCountries) {
-      dispatch(getAllCountries())
+      dispatch(getAllCountries());
     }
-  }, [])
+  }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    const locPathname = location.pathname.split("/")[1];
+    if (locPathname) {
+      document.title =
+        locPathname.charAt(0).toUpperCase() + locPathname.slice(1);
+    }
   }, [location]);
-  
+
   return (
     <div className="bg-black relative pt-10">
-      <Navbar/>
+      <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/search" element={<Search />} />
@@ -34,7 +39,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/country/:countryName" element={<Detail />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

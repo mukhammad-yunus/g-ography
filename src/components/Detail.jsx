@@ -47,6 +47,8 @@ function Detail() {
         return { name, link };
       });
       setNeighbors(borders);
+      document.title = current?.name.common;
+
     }
   }, [current]);
 
@@ -73,7 +75,7 @@ function Detail() {
         <h2 className="font-bold text-2xl pb-4">Additional Information</h2>
         <div className=" grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="grid gap-2">
-            <GetElementFromObj obj={current.demonyms} context={"Demonym for "} />
+            <GetElementFromObj obj={current.demonyms}  />
           </div>
           <div className="grid gap-2">
             <GetElementFromObj obj={current.currencies} context={'Currency '} />
@@ -100,121 +102,3 @@ function Detail() {
 }
 
 export default Detail;
-const obj = {
-  translations: {
-    ara: {
-      official: "جمهورية أوزباكستان",
-      common: "أوزباكستان",
-    },
-    bre: {
-      official: "Republik Ouzbekistan",
-      common: "Ouzbekistan",
-    },
-    ces: {
-      official: "Republika Uzbekistán",
-      common: "Uzbekistán",
-    },
-    cym: {
-      official: "Republic of Uzbekistan",
-      common: "Uzbekistan",
-    },
-    deu: {
-      official: "Republik Usbekistan",
-      common: "Usbekistan",
-    },
-    est: {
-      official: "Usbekistani Vabariik",
-      common: "Usbekistan",
-    },
-    fin: {
-      official: "Uzbekistanin tasavalta",
-      common: "Uzbekistan",
-    },
-    fra: {
-      official: "République d'Ouzbékistan",
-      common: "Ouzbékistan",
-    },
-    hrv: {
-      official: "Republika Uzbekistan",
-      common: "Uzbekistan",
-    },
-    hun: {
-      official: "Üzbég Köztársaság",
-      common: "Üzbegisztán",
-    },
-    ita: {
-      official: "Repubblica di Uzbekistan",
-      common: "Uzbekistan",
-    },
-    jpn: {
-      official: "ウズベキスタン共和国",
-      common: "ウズベキスタン",
-    },
-    kor: {
-      official: "우즈베키스탄 공화국",
-      common: "우즈베키스탄",
-    },
-    nld: {
-      official: "Republiek Oezbekistan",
-      common: "Oezbekistan",
-    },
-    per: {
-      official: "جمهوری ازبکستان",
-      common: "ازبکستان",
-    },
-    pol: {
-      official: "Republika Uzbekistanu",
-      common: "Uzbekistan",
-    },
-    por: {
-      official: "República do Usbequistão",
-      common: "Uzbequistão",
-    },
-    rus: {
-      official: "Республика Узбекистан",
-      common: "Узбекистан",
-    },
-    slk: {
-      official: "Uzbecká republika",
-      common: "Uzbekistan",
-    },
-    spa: {
-      official: "República de Uzbekistán",
-      common: "Uzbekistán",
-    },
-    srp: {
-      official: "Република Узбекистан",
-      common: "Узбекистан",
-    },
-    swe: {
-      official: "Republiken Uzbekistan",
-      common: "Uzbekistan",
-    },
-    tur: {
-      official: "Özbekistan Cumhuriyeti",
-      common: "Özbekistan",
-    },
-    urd: {
-      official: "جمہوریہ ازبکستان",
-      common: "ازبکستان",
-    },
-    zho: {
-      official: "乌兹别克斯坦共和国",
-      common: "乌兹别克斯坦",
-    },
-  },
-  latlng: [41, 64],
-  landlocked: true,
-  maps: {
-    googleMaps: "https://goo.gl/maps/AJpo6MjMx23qSWCz8",
-    openStreetMaps: "https://www.openstreetmap.org/relation/196240",
-  },
-
-  coatOfArms: {
-    png: "https://mainfacts.com/media/images/coats_of_arms/uz.png",
-    svg: "https://mainfacts.com/media/images/coats_of_arms/uz.svg",
-  },
-  capitalInfo: {
-    latlng: [41.32, 69.25],
-  },
-};

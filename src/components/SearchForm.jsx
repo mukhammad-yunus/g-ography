@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { IoMdSearch } from "react-icons/io";
 import { configArr } from "../config/constants";
-import SearchOptionsBtn from "./helpers/searchOptionsBtn";
+import SearchOptionsBtn from "./helpers/SearchOptionsBtn";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchSearch,
@@ -21,7 +21,6 @@ function SearchForm() {
       return configArr[0];
     }
   });
-  const error = useSelector(getSearchError);
   const loading = useSelector(getSearchStatus);
   const searchRef = useRef();
   const dispatch = useDispatch();
@@ -31,7 +30,7 @@ function SearchForm() {
     const url = `https://restcountries.com/v3.1${searchBy.endpoint(
       searchRef.current.value
     )}`;
-
+    document.title = `Searching: ${searchRef.current.value}`
     dispatch(fetchSearch(url));
   }
   useEffect(() => {

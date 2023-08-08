@@ -2,8 +2,6 @@ import React, { useEffect } from "react";
 import Description from "../components/helpers/Description";
 import profile from "../assets/profile.png";
 function About() {
-  useEffect(() => {}, []);
-
   return (
     <div className="min-h-screen mt-10 text-white ">
       <Description />
