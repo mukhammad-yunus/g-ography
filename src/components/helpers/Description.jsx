@@ -3,11 +3,12 @@ import { tick } from "../../assets/tick";
 
 function Description() {
   return (
-    <section className="bg-black text-white md:py-8 md:px-20 sm:p-8 p-6 mt-20">
-      <h1 className="pb-4 xs:pb-6 lg:pb-8 font-bold text-2xl sm:text-3xl">
-        Here is what you can do here.
+    <section className="bg-black text-white md:px-20 sm:px-8 px-6 flex flex-col justify-center min-h-screen">
+      <h1 className="select-none md:text-[4rem] text-[2.5rem] md:leading-[4rem] leading-[4rem] font-bold text-gray-50 mb-10">
+        About the G-ography
       </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="flex flex-col justify-start items-start border p-2 xs:p-4 rounded-lg hover:bg-zinc-900">
           <h2 className="text-2xl sm:text-2xl font-bold  xs:pb-4 pb-2">
             Information About All Countries

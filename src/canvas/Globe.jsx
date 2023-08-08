@@ -12,13 +12,13 @@ const Globe = () => {
     const height = window.innerHeight;
 
     if (height < 500) {
-      return 1.15;
+      return 1.1;
     } else if (height > 500 && height < 1024) {
-      return 1.5;
+      return 1.35;
     } else if (1024 < height && height < 1228) {
-      return 1.75;
+      return 1.5;
     } else {
-      return 2;
+      return 1.75;
     }
   }
   useEffect(() => {

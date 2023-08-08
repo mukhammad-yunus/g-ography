@@ -7,8 +7,8 @@ function Card({ country, home }) {
     : "none";
 
   const parentClass = home
-    ? "glassmorphism border-gray-200 max-w-3xl flex flex-row border rounded p-2 flex gap-3 cursor-pointer items-center"
-    : "glassmorphism w-full border-gray-200 border rounded p-2 flex flex-col justify-between gap-3 cursor-pointer";
+    ? "glassmorphism-white border-gray-200 max-w-3xl flex flex-row border rounded p-2 flex gap-3 cursor-pointer items-center"
+    : "glassmorphism-white w-full border-gray-200 border rounded p-2 flex flex-col justify-between gap-3 cursor-pointer";
   const infoClass = home
     ? "place-self-start w-full grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3"
     : "flex flex-col justify-between items-start";

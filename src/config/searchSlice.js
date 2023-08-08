@@ -37,8 +37,12 @@ const searchSlice = createSlice({
                     state.search = []
                     state.error = action.payload
                 } else{
-                    state.search = state.search.concat(action.payload)
+                    state.search = action.payload
                 }
+            })
+            .addCase(fetchSearch.rejected, (state, action)=>{
+                console.log(action.error);
+                state.error = action.error
             })
     }
 })

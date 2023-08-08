@@ -33,13 +33,25 @@
 .max-w-input {
   max-width: calc(100vw-100px);
 }
-.h-full-20rem {
-  height: calc(100vh - 20rem);
+.max-h-screen-20x {
+  max-height: calc(100vh * 20);
 }
-.glassmorphism {
+.glassmorphism, .glassmorphism-white {
   background: rgba(0, 0, 0, 0.1);
   box-shadow: 0 2px 30px 0 rgba(31, 38, 135, 0.012);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  transition: background 0.3s ease-in-out;
+}
+.glassmorphism-white:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.custom-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.custom-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }

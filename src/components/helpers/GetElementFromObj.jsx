@@ -1,49 +1,61 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-function GetElementFromObj({obj, name}) {
-  const objToArr = () => Object.entries(obj);
-  const arr = objToArr();
-  const key = Object.keys(arr[0][1]);
-  const keyOne = key[0];
-  const keyTwo = key[1];
-  const element = arr.map((item, index) => {
-    const isLast = index === arr.length - 1;
-    const className = isLast ? "p-4" : "p-4 border-b border-blue-gray-50";
+function GetElementFromObj({ obj, context }) {
+  const [text, setText] = useState(null);
+  const [active, setActive] = useState(null);
+  const objToArr = (object) => Object.entries(object);
+  const arr = objToArr(obj);
+  const selectEl = arr.map((item, index) => {
     const countryCode = item[0];
-    const info = item[1];
-    const itemOne = info[keyOne];
-    const itemTwo = info[keyTwo];
+    const activeClassName =
+      active === countryCode
+        ? "bg-white text-black font-black border rounded-lg text-center px-6 py-1 hover:bg-neutral-200 cursor-pointer"
+        : "bg-black border rounded-lg text-center px-6 py-1 hover:bg-neutral-950 cursor-pointer";
     return (
-      <tr key={index}>
-        <td className={className}>
-          <p className="font-normal md:text-lg leading-none">{countryCode}</p>
-        </td>
-        <td className={className}>
-          <p className="font-normal md:text-lg leading-none">{itemOne}</p>
-        </td>
-        <td className={className}>
-          <p className="font-normal md:text-lg leading-none">{itemTwo}</p>
-        </td>
-      </tr>
+      <p key={countryCode} className={activeClassName} onClick={handleClick}>
+        {countryCode}
+      </p>
     );
   });
+  function handleClick(e) {
+    const { innerText } = e.target;
+    if (innerText === active) {
+      setText(null);
+      setActive(null);
+    } else {
+      setActive(innerText);
+    }
+  }
+  
+  useEffect(() => {
+    setActive(arr[0][0])
+  }, [obj])
+  
+  useEffect(() => {
+    if (active) {
+      const value = objToArr(obj[active]);
+      const textEl = value.map((item, index) => (
+        <div
+          key={`${index}${active.split("").join("_")}`}
+          className="grid grid-cols-2 py-1 border-b-2 border-neutral-900  items-center"
+        >
+          <p className="flex gap-1 flex-wrap">{context}{item[0]}</p>
+          <p className=" justify-self-start">{item[1]}</p>
+        </div>
+      ));
+      setText(textEl);
+    }
+  
+  }, [active])
+  
+  
   return (
-    <table className="w-full table-auto text-left">
-      <thead>
-        <tr>
-          <th className="border-b border-blue-gray-100 bg-blue-gray-50 p-4">
-            <p className="font-normal leading-none opacity-70">{name}</p>
-          </th>
-          <th className="border-b border-blue-gray-100 bg-blue-gray-50 p-4">
-            <p className="font-normal leading-none opacity-70">{keyOne}</p>
-          </th>
-          <th className="border-b border-blue-gray-100 bg-blue-gray-50 p-4">
-            <p className="font-normal leading-none opacity-70">{keyTwo}</p>
-          </th>
-        </tr>
-      </thead>
-      <tbody>{element}</tbody>
-    </table>
+    <div className="w-full grid">
+      <div className="flex gap-2 items-center w-full overflow-x-scroll custom-scrollbar select-none">
+        {selectEl}
+      </div>
+      {text && <div className=" mt-3">{text}</div>}
+    </div>
   );
 }
 

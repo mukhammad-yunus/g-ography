@@ -3,12 +3,11 @@ import { Canvas } from "@react-three/fiber";
 import Home from "../components/Home";
 import Globe from "../canvas/Globe";
 import HomeCountries from "../components/HomeCountries";
-import Description from "../components/helpers/Description";
 
 function HomePage() {
   return (
     <main>
-      <div className=" relative w-ful h-screen  transition-all ease-in">
+      <div className="relative w-ful h-screen  transition-all ease-in">
         <Home />
         <Canvas
           orthographic
@@ -17,7 +16,6 @@ function HomePage() {
           <Globe />
         </Canvas>
       </div>
-      <Description />
       <HomeCountries />
     </main>
   );

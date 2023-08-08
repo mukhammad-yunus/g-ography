@@ -36,7 +36,7 @@ function Home() {
               famous landmarks, for every nation.
             </p>
             <button
-            className="bg-transparent select-none w-full border rounded py-1 text-lg text-white px-4 outline-none"
+            className="bg-transparent font-bold select-none w-full border rounded py-1 text-lg text-white px-4 outline-none hover:bg-gray-100 hover:text-black"
             onClick={()=> navigate('/search')}
             >
               Search for
