@@ -59,7 +59,7 @@ function Detail() {
       </div>
     );
   return (
-    <div className="min-h-screen text-white md:px-20 sm:px-8 px-6 pt-14">
+    <div className="min-h-screen text-white md:px-20 sm:px-8 px-6 py-14">
       <MainDetails
         current={current}
         oddClassName={oddClassName}
