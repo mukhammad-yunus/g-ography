@@ -23,7 +23,7 @@ function Detail() {
       );
       setCurrent(country);
     };
-    if (result.length) {
+    if (result?.length) {
       getCountry(result);
     } else {
       const fetchCurrentCountry = async () => {
@@ -87,10 +87,10 @@ function Detail() {
               <p>{current.idd.root}</p>
             </div>
             <div className={evenClassName}>
-            <p>{current.idd.suffixes.length > 1 ? "Suffixes" : "Suffix"}</p>
+            <p>{current.idd.suffixes?.length > 1 ? "Suffixes" : "Suffix"}</p>
               <span className="flex gap-3 flex-wrap">
                 {current.idd.suffixes?.map((continent, index) => (
-                  <span key={index}>{continent}{current.idd.suffixes.length == (index + 1) ? "" : current.idd.suffixes.length > 1 ? ", " : ""}</span>
+                  <span key={index}>{continent}{current.idd.suffixes?.length == (index + 1) ? "" : current.idd.suffixes?.length > 1 ? ", " : ""}</span>
                 ))}
               </span>
             </div>

@@ -10,7 +10,7 @@ function HomeCountries() {
   const neighbors = useSelector(selectNeighbors)
 
   useEffect(() => {
-    if (myCountry.length) {
+    if (myCountry?.length) {
       const borders = myCountry[0].borders;
       dispatch(getNeighbors(borders));
     }

@@ -37,7 +37,7 @@ function MainDetails({ current, oddClassName, evenClassName }) {
             <span>{current.area.toLocaleString()} km²</span>
           </p>
           <div className={oddClassName}>
-            <p>{current.tld.length > 1 ? "Domains" : "Domain"}</p>
+            <p>{current.tld?.length > 1 ? "Domains" : "Domain"}</p>
             <span className="flex gap-3 flex-wrap">
               {current.tld?.map((domain, index) => (
                 <span key={index}>{domain}</span>

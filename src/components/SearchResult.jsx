@@ -5,7 +5,7 @@ import Card from "./helpers/Card";
 
 function SearchResult() {
   const result = useSelector(selectSearchResult);
-  if (!result.length) return;
+  if (!result?.length) return;
   if(result === 'Request failed with status code 400') return <p className="text-red-200 mt-4 p-2 rounded border border-red-500">We could not find any information.</p>
 
   return (

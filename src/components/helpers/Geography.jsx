@@ -7,7 +7,7 @@ function Geography({ current, oddClassName, evenClassName, neighbors }) {
       <h2 className="font-bold text-2xl pb-4">Geography</h2>
       <div>
         <div className={oddClassName}>
-          <p>{current.continents.length > 1 ? "Continents" : "Continent"}</p>
+          <p>{current.continents?.length > 1 ? "Continents" : "Continent"}</p>
           <span className="flex gap-3 flex-wrap">
             {current.continents?.map((continent, index) => (
               <span key={index}>{continent}</span>
@@ -24,7 +24,7 @@ function Geography({ current, oddClassName, evenClassName, neighbors }) {
         </p>
         {neighbors?.length && (
           <div className={evenClassName}>
-            <p>{neighbors.length > 1 ? "Neighbors" : "Neighbor"}</p>
+            <p>{neighbors?.length > 1 ? "Neighbors" : "Neighbor"}</p>
             <span className="flex flex-wrap">
               {neighbors?.map(({ name, link }, index) => (
                 <Link
@@ -33,9 +33,9 @@ function Geography({ current, oddClassName, evenClassName, neighbors }) {
                   className="mr-2 hover:underline transition-all duration-200 ease-in-out"
                 >
                   {name}
-                  {neighbors.length == index + 1
+                  {neighbors?.length == index + 1
                     ? ""
-                    : neighbors.length > 1
+                    : neighbors?.length > 1
                     ? ", "
                     : ""}
                 </Link>
@@ -44,7 +44,7 @@ function Geography({ current, oddClassName, evenClassName, neighbors }) {
           </div>
         )}
         <div className={oddClassName}>
-          <p>{current.timezones.length > 1 ? "Timezones" : "Timezone"}</p>
+          <p>{current.timezones?.length > 1 ? "Timezones" : "Timezone"}</p>
           <span className="flex gap-3 flex-wrap">
             {current.timezones?.map((timezone, index) => (
               <span key={index}>{timezone}</span>

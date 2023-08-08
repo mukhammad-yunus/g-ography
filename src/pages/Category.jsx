@@ -38,7 +38,7 @@ function Category() {
   };
   
   
-  if(!allCountries.length && !regions.length && !subRegions.length && !continents.length && !currencies.length) return <div className="h-screen bg-black"><Loader/></div>
+  if(!allCountries?.length && !regions?.length && !subRegions?.length && !continents?.length && !currencies?.length) return <div className="h-screen bg-black"><Loader/></div>
   return (
     <div className="min-h-screen text-white mt-10 md:px-20 sm:px-8 px-6 py-2 pb-10">
       <h1 className="select-none md:text-[4rem] text-[2.5rem] md:leading-[4rem] leading-[4rem] font-black text-gray-50 mb-10">Discover By Category</h1>
